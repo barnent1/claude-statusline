@@ -94,24 +94,31 @@ c_model="\033[38;2;120;113;108m"      # Stone gray #78716C
 c_version="\033[38;2;68;64;60m"       # Very dim #44403C
 c_reset="\033[0m"
 
+# Icons (standard Unicode emoji)
+icon_dir="📂"      # Open folder
+icon_model="🤖"    # Robot head
+
 # Build segments
-seg_path="${display_path}"
+seg_path="${icon_dir} ${display_path}"
 seg_branch=""
 [ -n "$branch" ] && seg_branch="${branch}"
-seg_model="${model}"
+seg_model="${icon_model} ${model}"
 seg_version=""
 [ -n "$version" ] && [ "$version" != "null" ] && seg_version="v${version}"
 
 # Calculate plain text length for right-alignment
+# Emoji are 2 display columns but ${#} counts as 1 char — add 1 per emoji
+emoji_extra=1  # 📂
 plain_left="${seg_path}"
 [ -n "$seg_branch" ] && plain_left="${plain_left}   ${seg_branch}"
 plain_left="${plain_left}   ${seg_model}"
-plain_len=${#plain_left}
+emoji_extra=$((emoji_extra + 1))  # 🤖
+plain_len=$(( ${#plain_left} + emoji_extra ))
 
 # Build colored left side
-colored_left="${c_path}${display_path}${c_reset}"
+colored_left="${c_reset}${icon_dir} ${c_path}${display_path}${c_reset}"
 [ -n "$seg_branch" ] && colored_left="${colored_left}   ${c_branch}${branch}${c_reset}"
-colored_left="${colored_left}   ${c_model}${model}${c_reset}"
+colored_left="${colored_left}   ${c_reset}${icon_model} ${c_model}${model}${c_reset}"
 
 # Right-align version
 if [ -n "$seg_version" ]; then
