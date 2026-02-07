@@ -1,0 +1,25 @@
+{
+  "name": "claude-statusline",
+  "version": "1.0.0",
+  "description": "Custom status line for Claude Code CLI with color-coded context window, git branch, and model info",
+  "bin": {
+    "claude-statusline": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "statusline-command.sh"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "statusline",
+    "cli",
+    "terminal"
+  ],
+  "author": "Glen Barnhardt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barnent1/claude-statusline.git"
+  }
+}
