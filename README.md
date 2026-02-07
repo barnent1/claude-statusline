@@ -7,7 +7,7 @@ Displays project path, git branch, model name, version, and a color-coded contex
 ## Install
 
 ```bash
-npx claude-statusline install
+npx github:barnent1/claude-statusline install
 ```
 
 This copies the status line script to `~/.claude/` and configures `settings.json` automatically. Restart Claude Code to see it.
@@ -15,7 +15,7 @@ This copies the status line script to `~/.claude/` and configures `settings.json
 ## Uninstall
 
 ```bash
-npx claude-statusline uninstall
+npx github:barnent1/claude-statusline uninstall
 ```
 
 Removes the script and cleans up `settings.json`.

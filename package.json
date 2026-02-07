@@ -1,9 +1,9 @@
 {
   "name": "claude-statusline",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Custom status line for Claude Code CLI with color-coded context window, git branch, and model info",
   "bin": {
-    "claude-statusline": "./bin/cli.js"
+    "claude-statusline": "bin/cli.js"
   },
   "files": [
     "bin/",
@@ -20,6 +20,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/barnent1/claude-statusline.git"
+    "url": "git+https://github.com/barnent1/claude-statusline.git"
   }
 }
